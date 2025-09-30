@@ -19,16 +19,27 @@ Allow: /
 User-agent: Slurp
 Allow: /
 
-# Block AI scrapers if you want to protect content
-# Uncomment the lines below to block specific AI crawlers
-# User-agent: GPTBot
-# Disallow: /
-# User-agent: ChatGPT-User
-# Disallow: /
-# User-agent: CCBot
-# Disallow: /
-# User-agent: anthropic-ai
-# Disallow: /
+# Allow AI search engines to index content
+# These AI crawlers are ALLOWED to help with AI search visibility
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Note: To block AI crawlers, change "Allow: /" to "Disallow: /"
 
 # Sitemap location
 Sitemap: https://yoursite.com/sitemap.xml
