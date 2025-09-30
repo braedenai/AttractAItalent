@@ -6,6 +6,8 @@
     <meta name="description" content="Innovative AI entrepreneur exploring the intersection of artificial intelligence and business growth. Discover insights on AI-driven innovation, ethics, and transformation.">
     <meta name="keywords" content="AI in business, innovative entrepreneurship, AI-driven growth, artificial intelligence, business innovation, AI tools, AI ethics">
     <meta name="author" content="Your Name">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://yoursite.com/">
     
     <!-- Open Graph Tags -->
     <meta property="og:title" content="AI Entrepreneur & Innovation Leader">
@@ -13,17 +15,26 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yoursite.com">
     <meta property="og:image" content="https://yoursite.com/assets/og-image.jpg">
+    <meta property="og:image:alt" content="AI Entrepreneur & Innovation Leader">
+    <meta property="og:site_name" content="Your Name - AI Entrepreneur">
+    <meta property="og:locale" content="en_US">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="AI Entrepreneur & Innovation Leader">
     <meta name="twitter:description" content="Exploring AI in business, innovation, and ethical AI-driven growth">
+    <meta name="twitter:image" content="https://yoursite.com/assets/og-image.jpg">
+    <meta name="twitter:image:alt" content="AI Entrepreneur & Innovation Leader">
+    <meta name="twitter:site" content="@yourhandle">
+    <meta name="twitter:creator" content="@yourhandle">
     
     <title>AI Entrepreneur & Innovation Leader | Your Name</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#6366f1">
     
-    <!-- Schema.org Person Markup -->
+    <!-- Schema.org Person & Website Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -32,11 +43,45 @@
       "jobTitle": "AI Entrepreneur & Innovation Leader",
       "description": "Innovative entrepreneur exploring AI in business and driving AI-driven growth",
       "url": "https://yoursite.com",
+      "email": "your.email@example.com",
+      "image": "https://yoursite.com/assets/profile.jpg",
       "sameAs": [
         "https://www.linkedin.com/in/yourprofile",
         "https://twitter.com/yourhandle"
       ],
-      "knowsAbout": ["Artificial Intelligence", "Business Innovation", "AI Ethics", "Entrepreneurship"]
+      "knowsAbout": ["Artificial Intelligence", "Business Innovation", "AI Ethics", "Entrepreneurship", "Machine Learning", "Digital Transformation"],
+      "alumniOf": {
+        "@type": "Organization",
+        "name": "Your University"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Your Name - AI Entrepreneur",
+      "url": "https://yoursite.com",
+      "description": "Innovative AI entrepreneur exploring the intersection of artificial intelligence and business growth",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://yoursite.com/blog.html?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://yoursite.com/"
+        }
+      ]
     }
     </script>
 </head>
@@ -62,7 +107,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" role="banner" aria-label="Hero section">
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">Transforming Business Through <span class="highlight">Artificial Intelligence</span></h1>
@@ -77,9 +122,9 @@
     </section>
 
     <!-- Featured Blog Posts Section -->
-    <section class="featured-posts">
+    <section class="featured-posts" role="main" aria-labelledby="featured-title">
         <div class="container">
-            <h2 class="section-title">Featured Insights</h2>
+            <h2 id="featured-title" class="section-title">Featured Insights</h2>
             <p class="section-subtitle">Exploring AI innovation, business transformation, and ethical technology</p>
             
             <div class="blog-grid" id="featuredBlogGrid">
@@ -159,7 +204,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo" aria-label="Site footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">

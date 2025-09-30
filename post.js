@@ -33,11 +33,22 @@ function loadPost() {
     document.getElementById('metaDescription').content = post.metaDescription;
     document.getElementById('metaKeywords').content = post.keywords;
     
+    // Update canonical URL
+    const currentUrl = `${window.location.origin}/post.html?id=${post.id}`;
+    document.getElementById('canonicalUrl').href = currentUrl;
+    
     // Update Open Graph tags
     document.getElementById('ogTitle').content = post.title;
     document.getElementById('ogDescription').content = post.metaDescription;
-    const currentUrl = `${window.location.origin}/post.html?id=${post.id}`;
     document.getElementById('ogUrl').content = currentUrl;
+    document.getElementById('ogImageAlt').content = post.title;
+    document.getElementById('articlePublishedTime').content = post.date;
+    document.getElementById('articleModifiedTime').content = post.date;
+    
+    // Update Twitter Card tags
+    document.getElementById('twitterTitle').content = post.title;
+    document.getElementById('twitterDescription').content = post.metaDescription;
+    document.getElementById('twitterImageAlt').content = post.title;
     
     // Render post content
     postLoading.style.display = 'none';
@@ -53,9 +64,11 @@ function renderPost(post, url) {
     
     return `
         <div class="post-header">
-            <h1 class="post-title">${escapeHtml(post.title)}</h1>
+            <h1 class="post-title" itemprop="headline">${escapeHtml(post.title)}</h1>
             <div class="post-meta">
-                <time datetime="${post.date}">${formatDate(post.date)}</time>
+                <time datetime="${post.date}" itemprop="datePublished">${formatDate(post.date)}</time>
+                <meta itemprop="author" content="Your Name">
+                <meta itemprop="inLanguage" content="en-US">
             </div>
             <div class="post-share">
                 <button onclick="shareOnLinkedIn('${escapeHtml(post.title)}', '${url}')" class="btn btn-secondary btn-small">
@@ -81,27 +94,70 @@ function renderPost(post, url) {
 }
 
 function addStructuredData(post) {
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify({
+    // Add BlogPosting structured data
+    const blogPostingScript = document.createElement('script');
+    blogPostingScript.type = 'application/ld+json';
+    blogPostingScript.textContent = JSON.stringify({
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": post.title,
         "description": post.metaDescription,
         "datePublished": post.date,
+        "dateModified": post.date,
         "author": {
+            "@type": "Person",
+            "name": "Your Name",
+            "url": window.location.origin,
+            "sameAs": [
+                "https://www.linkedin.com/in/yourprofile",
+                "https://twitter.com/yourhandle"
+            ]
+        },
+        "publisher": {
             "@type": "Person",
             "name": "Your Name",
             "url": window.location.origin
         },
-        "publisher": {
-            "@type": "Person",
-            "name": "Your Name"
-        },
         "keywords": post.keywords,
-        "articleBody": post.content
+        "articleBody": post.content,
+        "inLanguage": "en-US",
+        "url": `${window.location.origin}/post.html?id=${post.id}`,
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `${window.location.origin}/post.html?id=${post.id}`
+        },
+        "wordCount": post.content.split(/\s+/).length
     });
-    document.head.appendChild(script);
+    document.head.appendChild(blogPostingScript);
+    
+    // Add Breadcrumb structured data
+    const breadcrumbScript = document.createElement('script');
+    breadcrumbScript.type = 'application/ld+json';
+    breadcrumbScript.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": window.location.origin
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": `${window.location.origin}/blog.html`
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": post.title,
+                "item": `${window.location.origin}/post.html?id=${post.id}`
+            }
+        ]
+    });
+    document.head.appendChild(breadcrumbScript);
 }
 
 function escapeHtml(text) {
