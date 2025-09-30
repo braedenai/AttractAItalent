@@ -5,16 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Connect with an innovative AI entrepreneur. Reach out for talent opportunities, collaboration, media inquiries, or to discuss AI-driven business growth.">
     <meta name="keywords" content="AI entrepreneurship, innovative business, AI-driven growth, business collaboration, AI consulting">
+    <meta name="author" content="Your Name">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://yoursite.com/contact">
     
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Connect - AI Entrepreneurship & Innovation">
     <meta property="og:description" content="Get in touch for collaboration, talent opportunities, or to discuss AI-driven business innovation">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yoursite.com/contact">
+    <meta property="og:image" content="https://yoursite.com/assets/contact-og-image.jpg">
+    <meta property="og:image:alt" content="Connect with AI Entrepreneur">
+    <meta property="og:site_name" content="Your Name - AI Entrepreneur">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Connect - AI Entrepreneurship & Innovation">
+    <meta name="twitter:description" content="Get in touch for collaboration, talent opportunities, or to discuss AI-driven business innovation">
+    <meta name="twitter:image" content="https://yoursite.com/assets/contact-og-image.jpg">
+    <meta name="twitter:image:alt" content="Connect with AI Entrepreneur">
+    <meta name="twitter:site" content="@yourhandle">
+    <meta name="twitter:creator" content="@yourhandle">
     
     <title>Connect - Reach Out for Collaboration | Your Name</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#6366f1">
+    
+    <!-- Schema.org ContactPage Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Connect with Your Name",
+      "description": "Get in touch for collaboration, talent opportunities, or to discuss AI-driven business innovation",
+      "url": "https://yoursite.com/contact",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Your Name",
+        "email": "your.email@example.com",
+        "url": "https://yoursite.com"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://yoursite.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Connect",
+          "item": "https://yoursite.com/contact"
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -38,7 +93,7 @@
     </nav>
 
     <!-- Contact Header -->
-    <section class="page-header">
+    <section class="page-header" role="banner" aria-label="Contact header">
         <div class="container">
             <h1>Let's Connect</h1>
             <p>Interested in collaboration, talent opportunities, or discussing AI innovation? I'd love to hear from you.</p>
@@ -46,7 +101,7 @@
     </section>
 
     <!-- Contact Form Section -->
-    <section class="contact-section">
+    <section class="contact-section" role="main" aria-label="Contact form">
         <div class="container">
             <div class="contact-grid">
                 <div class="contact-info">
@@ -88,7 +143,7 @@
                 </div>
 
                 <div class="contact-form-container">
-                    <form id="contactForm" class="contact-form">
+                    <form id="contactForm" class="contact-form" aria-label="Contact form">
                         <div class="form-group">
                             <label for="name">Your Name *</label>
                             <input type="text" id="name" name="name" required>
@@ -141,7 +196,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo" aria-label="Site footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">

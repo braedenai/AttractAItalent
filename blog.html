@@ -5,16 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Insights on AI in business, innovation, ethics, AI tools, and AI-driven growth. Explore thought leadership on artificial intelligence and entrepreneurship.">
     <meta name="keywords" content="AI in business, innovation, ethics, AI tools, AI-driven growth, artificial intelligence blog, business innovation">
+    <meta name="author" content="Your Name">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://yoursite.com/blog">
     
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Blog - AI Innovation & Business Insights">
     <meta property="og:description" content="Thought leadership on AI in business, innovation, and ethical AI-driven growth">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yoursite.com/blog">
+    <meta property="og:image" content="https://yoursite.com/assets/blog-og-image.jpg">
+    <meta property="og:image:alt" content="AI Innovation & Business Insights Blog">
+    <meta property="og:site_name" content="Your Name - AI Entrepreneur">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog - AI Innovation & Business Insights">
+    <meta name="twitter:description" content="Thought leadership on AI in business, innovation, and ethical AI-driven growth">
+    <meta name="twitter:image" content="https://yoursite.com/assets/blog-og-image.jpg">
+    <meta name="twitter:image:alt" content="AI Innovation & Business Insights Blog">
+    <meta name="twitter:site" content="@yourhandle">
+    <meta name="twitter:creator" content="@yourhandle">
     
     <title>Blog - AI Innovation & Business Insights | Your Name</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#6366f1">
+    
+    <!-- Schema.org Blog Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "AI Innovation & Business Insights",
+      "description": "Thought leadership on AI in business, innovation, and ethical AI-driven growth",
+      "url": "https://yoursite.com/blog",
+      "author": {
+        "@type": "Person",
+        "name": "Your Name",
+        "url": "https://yoursite.com"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Your Name"
+      },
+      "inLanguage": "en-US"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://yoursite.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://yoursite.com/blog"
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -38,7 +97,7 @@
     </nav>
 
     <!-- Blog Header -->
-    <section class="page-header">
+    <section class="page-header" role="banner" aria-label="Blog header">
         <div class="container">
             <h1>Insights & Thought Leadership</h1>
             <p>Exploring AI innovation, business transformation, and the future of intelligent technology</p>
@@ -53,9 +112,9 @@
     </section>
 
     <!-- Blog Posts Section -->
-    <section class="blog-section">
+    <section class="blog-section" role="main" aria-label="Blog posts">
         <div class="container">
-            <div class="blog-grid" id="blogGrid">
+            <div class="blog-grid" id="blogGrid" itemscope itemtype="https://schema.org/ItemList">
                 <!-- Blog posts will be loaded here dynamically -->
                 <div class="no-posts" id="noPosts">
                     <p>No blog posts yet. Check back soon for insights on AI and business innovation!</p>
@@ -65,7 +124,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo" aria-label="Site footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">

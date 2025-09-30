@@ -5,16 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="" id="metaDescription">
     <meta name="keywords" content="" id="metaKeywords">
+    <meta name="author" content="Your Name">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" id="metaRobots">
+    <link rel="canonical" href="" id="canonicalUrl">
     
     <!-- Open Graph Tags -->
     <meta property="og:title" content="" id="ogTitle">
     <meta property="og:description" content="" id="ogDescription">
     <meta property="og:type" content="article">
     <meta property="og:url" content="" id="ogUrl">
+    <meta property="og:image" content="https://yoursite.com/assets/blog-og-image.jpg" id="ogImage">
+    <meta property="og:image:alt" content="" id="ogImageAlt">
+    <meta property="og:site_name" content="Your Name - AI Entrepreneur">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:author" content="Your Name">
+    <meta property="article:published_time" content="" id="articlePublishedTime">
+    <meta property="article:modified_time" content="" id="articleModifiedTime">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="" id="twitterTitle">
+    <meta name="twitter:description" content="" id="twitterDescription">
+    <meta name="twitter:image" content="https://yoursite.com/assets/blog-og-image.jpg" id="twitterImage">
+    <meta name="twitter:image:alt" content="" id="twitterImageAlt">
+    <meta name="twitter:site" content="@yourhandle">
+    <meta name="twitter:creator" content="@yourhandle">
     
     <title id="pageTitle">Blog Post | Your Name</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#6366f1">
 </head>
 <body>
     <!-- Navigation -->
@@ -38,7 +59,7 @@
     </nav>
 
     <!-- Post Content -->
-    <article class="post-content" id="postContent">
+    <article class="post-content" id="postContent" role="main" itemscope itemtype="https://schema.org/BlogPosting">
         <div class="container">
             <div class="post-loading" id="postLoading">
                 <p>Loading post...</p>
@@ -57,7 +78,7 @@
     </article>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo" aria-label="Site footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
